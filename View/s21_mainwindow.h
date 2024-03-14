@@ -32,11 +32,15 @@ private slots:
 
     void openFile();
 
+    ControllerCave* getControllerCave();
+    ControllerMaze* getControllerMaze();
+
 private:
     ControllerCave* controller_cave_;
     ControllerMaze* controller_maze_;
-    Ui::MainWindow *ui_;
     GraphicScene *scene_;
+    Ui::MainWindow *ui_;
+
 
 };
 

@@ -12,21 +12,15 @@ MainWindow::MainWindow(ControllerCave* cntr_cave_, ControllerMaze* cntr_maze_, Q
     this->setWindowTitle("Maze");
     ui_->setupUi(this);
     setFixedSize(745, 512);
-    scene_ = new s21::GraphicScene(this);
+    scene_ = new s21::GraphicScene(this, controller_cave_, controller_maze_);
     ui_->graphicsView->setScene(scene_);
 
-    connect(ui_->maze_width_slider, &QSlider::valueChanged, this,
-            &MainWindow::onMazeWidthSliderValueChanged);
-    connect(ui_->maze_height_slider, &QSlider::valueChanged, this,
-            &MainWindow::onMazeHeightSliderValueChanged);
-    connect(ui_->cave_width_slider, &QSlider::valueChanged, this,
-            &MainWindow::onCaveWidthSliderValueChanged);
-    connect(ui_->cave_height_slider, &QSlider::valueChanged, this,
-            &MainWindow::onCaveHeightSliderValueChanged);
-    connect(ui_->birth_slider, &QSlider::valueChanged, this,
-            &MainWindow::onBirthSliderValueChanged);
-    connect(ui_->death_slider, &QSlider::valueChanged, this,
-            &MainWindow::onDeathSliderValueChanged);
+    connect(ui_->maze_width_slider, &QSlider::valueChanged, this, &MainWindow::onMazeWidthSliderValueChanged);
+    connect(ui_->maze_height_slider, &QSlider::valueChanged, this, &MainWindow::onMazeHeightSliderValueChanged);
+    connect(ui_->cave_width_slider, &QSlider::valueChanged, this, &MainWindow::onCaveWidthSliderValueChanged);
+    connect(ui_->cave_height_slider, &QSlider::valueChanged, this, &MainWindow::onCaveHeightSliderValueChanged);
+    connect(ui_->birth_slider, &QSlider::valueChanged, this, &MainWindow::onBirthSliderValueChanged);
+    connect(ui_->death_slider, &QSlider::valueChanged, this, &MainWindow::onDeathSliderValueChanged);
     connect(ui_->load_file_maze_button, SIGNAL(clicked()), this, SLOT(openFile()));
     connect(ui_->load_file_cave_button, SIGNAL(clicked()), this, SLOT(openFile()));
 }
@@ -39,6 +33,14 @@ MainWindow::~MainWindow() {
 
 void MainWindow::openFile() {
     QFileDialog::getOpenFileName(this, "Load a file", QDir::currentPath());
+}
+
+ControllerCave *MainWindow::getControllerCave() {
+    return controller_cave_;
+}
+
+ControllerMaze *MainWindow::getControllerMaze(){
+    return controller_maze_;
 }
 
 void MainWindow::onCaveWidthSliderValueChanged(int value) {

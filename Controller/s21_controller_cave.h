@@ -10,6 +10,8 @@ class ControllerCave {
 public:
     explicit ControllerCave(ModelCave* ptr);
     ~ControllerCave();
+    std::pair<int, int> getSize();
+    int** const getData();
 
 private:
     ModelCave* model_;
