@@ -59,9 +59,9 @@ void GraphicWidget::drawCave() {
         for (int j = 0; j < cave_size_.second; ++j) {
          //   std::cout << " data[" << i << "][" << j << "] = " << data[i][j] << "\n";
             if (data[i][j]) {
-                scene_->addRect(step_x * i - 250, step_y * j  - 250, step_x, step_y, Qt::NoPen, QBrush(Qt::black));
+                scene_->addRect(step_x * j - 250, step_y * i  - 250, step_x, step_y, Qt::NoPen, QBrush(Qt::black));
             } else {
-                scene_->addRect(step_x * i - 250, step_y * j  - 250, step_x, step_y, Qt::NoPen, QBrush(Qt::white));
+                scene_->addRect(step_x * j - 250, step_y * i  - 250, step_x, step_y, Qt::NoPen, QBrush(Qt::white));
             }
         }
        // std::cout << "\n";

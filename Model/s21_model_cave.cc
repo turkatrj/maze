@@ -28,7 +28,7 @@ int ModelCave::openFile(std::string filepath) {
             cave_file >> size_m_;
 
             if (size_n_ > 0 & size_n_ <= 50 && size_m_ > 0 & size_m_ <= 50) {
-                std::cout << "Lets parsing! " << size_n_ << " " << size_m_ << "\n";
+                std::cout << "Lets parsing cave! " << size_n_ << " " << size_m_ << "\n\n";
 
                 data_ = new int*[size_n_];
 
@@ -39,7 +39,7 @@ int ModelCave::openFile(std::string filepath) {
                     }
                 }
 
-                // printArray(data_);
+             //    printArray(data_);
                 break;
             } else {
                 std::cout << "BAD SIZES!\n" << size_n_ << " " << size_m_ << "\n";
