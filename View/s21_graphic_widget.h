@@ -18,6 +18,7 @@ class GraphicWidget : public QGraphicsView
 public:
     explicit GraphicWidget(QWidget *ui, ControllerCave* cntr_cave_, ControllerMaze* cntr_maze_);
     ~GraphicWidget();
+    void drawCave();
 
 private:
     QWidget *ui_;
