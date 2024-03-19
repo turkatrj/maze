@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QGraphicsView>
 #include <QGraphicsItem>
+#include <QGraphicsItemGroup>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 

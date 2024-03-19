@@ -13,6 +13,14 @@ MainWindow::MainWindow(ControllerCave* cntr_cave_, ControllerMaze* cntr_maze_, Q
     ui_->setupUi(this);
     setFixedSize(745, 512);
     scene_ = new s21::GraphicScene(this, controller_cave_, controller_maze_);
+
+   // ui_->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); // Отключим скроллбар по горизонтали
+   // ui_->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);   // Отключим скроллбар по вертикали
+    ui_->graphicsView->setAlignment(Qt::AlignCenter);                        // Делаем привязку содержимого к центру
+    ui_->graphicsView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);    // Растягиваем содержимое по виджету
+
+
+    ui_->graphicsView->setSceneRect(-250, -250, 500, 500);
     ui_->graphicsView->setScene(scene_);
 
     connect(ui_->maze_width_slider, &QSlider::valueChanged, this, &MainWindow::onMazeWidthSliderValueChanged);
