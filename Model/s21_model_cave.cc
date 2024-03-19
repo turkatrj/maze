@@ -7,9 +7,6 @@ ModelCave::ModelCave() {
 
     openFile("/home/turkartj/maze_test/Tests/cave_test.txt");
 
-
-
-
 }
 
 ModelCave::~ModelCave() {}
@@ -42,7 +39,7 @@ int ModelCave::openFile(std::string filepath) {
                     }
                 }
 
-                printArray(data_);
+                // printArray(data_);
                 break;
             } else {
                 std::cout << "BAD SIZES!\n" << size_n_ << " " << size_m_ << "\n";

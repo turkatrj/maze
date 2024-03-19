@@ -2,6 +2,7 @@
 #define SRC_VIEW_GRAPHICSCENE_H
 
 #include <QWidget>
+#include <QPen>
 #include <QGraphicsView>
 #include <QGraphicsItem>
 #include <QGraphicsItemGroup>
@@ -19,6 +20,7 @@ public:
     explicit GraphicWidget(QWidget *ui, ControllerCave* cntr_cave_, ControllerMaze* cntr_maze_);
     ~GraphicWidget();
     void drawCave();
+    void drawMaze();
 
 private:
     QWidget *ui_;
