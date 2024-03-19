@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 
-#include "s21_graphicscene.h"
+#include "s21_graphic_widget.h"
 #include "../Controller/s21_controller_cave.h"
 #include "../Controller/s21_controller_maze.h"
 
@@ -38,8 +38,8 @@ private slots:
 private:
     ControllerCave* controller_cave_;
     ControllerMaze* controller_maze_;
-    GraphicScene *scene_;
     Ui::MainWindow *ui_;
+    GraphicWidget *graphic_widget_;
 
 
 };

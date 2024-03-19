@@ -56,7 +56,19 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>230</width>
+        <height>500</height>
+       </size>
+      </property>
       <property name="maximumSize">
+       <size>
+        <width>230</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="baseSize">
        <size>
         <width>230</width>
         <height>500</height>
@@ -1224,29 +1236,11 @@ QPushButton:hover {
      </widget>
     </item>
     <item>
-     <widget class="QGraphicsView" name="graphicsView">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+     <layout class="QVBoxLayout" name="widgetLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetFixedSize</enum>
       </property>
-      <property name="minimumSize">
-       <size>
-        <width>500</width>
-        <height>500</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>500</width>
-        <height>500</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-     </widget>
+     </layout>
     </item>
    </layout>
   </widget>

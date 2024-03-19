@@ -1,5 +1,5 @@
 #include "s21_mainwindow.h"
-#include "s21_graphicscene.h"
+#include "s21_graphic_widget.h"
 #include "forms/ui_s21_mainwindow.h"
 
 #include <QFileDialog>
@@ -12,6 +12,17 @@ MainWindow::MainWindow(ControllerCave* cntr_cave_, ControllerMaze* cntr_maze_, Q
     this->setWindowTitle("Maze");
     ui_->setupUi(this);
     setFixedSize(745, 512);
+
+    graphic_widget_ = new s21::GraphicWidget(this, controller_cave_, controller_maze_);
+
+
+
+
+
+    ui_->widgetLayout->addWidget(graphic_widget_);
+
+    /*
+
     scene_ = new s21::GraphicScene(this, controller_cave_, controller_maze_);
 
    // ui_->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); // Отключим скроллбар по горизонтали
@@ -22,6 +33,8 @@ MainWindow::MainWindow(ControllerCave* cntr_cave_, ControllerMaze* cntr_maze_, Q
 
     ui_->graphicsView->setSceneRect(-250, -250, 500, 500);
     ui_->graphicsView->setScene(scene_);
+
+    */
 
     connect(ui_->maze_width_slider, &QSlider::valueChanged, this, &MainWindow::onMazeWidthSliderValueChanged);
     connect(ui_->maze_height_slider, &QSlider::valueChanged, this, &MainWindow::onMazeHeightSliderValueChanged);

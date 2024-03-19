@@ -26,8 +26,8 @@ set(PROJECT_SOURCES
         Controller/s21_controller_maze.h
         Controller/s21_controller_maze.cc
         View/forms/s21_mainwindow.ui
-        View/s21_graphicscene.h
-        View/s21_graphicscene.cc
+        View/s21_graphic_widget.h
+        View/s21_graphic_widget.cc
         View/s21_mainwindow.h
         View/s21_mainwindow.cc
 )
