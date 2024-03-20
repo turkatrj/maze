@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    MainWindow(ControllerCave* cntr_cave_, ControllerMaze* cntr_maze_, QWidget *parent = nullptr);
+    MainWindow (QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -31,7 +31,7 @@ private slots:
     void onDeathSliderValueChanged(int value);
 
     void openFile();
-
+    friend class GraphicScene;
 private:
     ControllerCave* controller_cave_;
     ControllerMaze* controller_maze_;

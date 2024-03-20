@@ -4,15 +4,16 @@
 
 #include <QFileDialog>
 
+#include "../Model/s21_model_maze.h"
 namespace s21 {
 
-MainWindow::MainWindow(ControllerCave* cntr_cave_, ControllerMaze* cntr_maze_, QWidget *parent)
-    : QMainWindow(parent), controller_cave_(cntr_cave_), controller_maze_(cntr_maze_),  ui_(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent), ui_(new Ui::MainWindow)
 {
     this->setWindowTitle("Maze");
     ui_->setupUi(this);
     setFixedSize(745, 512);
-    scene_ = new s21::GraphicScene(this);
+    scene_ = new s21::GraphicScene(ui_);
     ui_->graphicsView->setScene(scene_);
 
     connect(ui_->maze_width_slider, &QSlider::valueChanged, this,
@@ -36,9 +37,9 @@ MainWindow::~MainWindow() {
     delete ui_;
 }
 
-
 void MainWindow::openFile() {
-    QFileDialog::getOpenFileName(this, "Load a file", QDir::currentPath());
+    QString path = QFileDialog::getOpenFileName(this, "Load a file", QDir::currentPath());
+    scene_->DrawFromFile(path.toStdString());
 }
 
 void MainWindow::onCaveWidthSliderValueChanged(int value) {
